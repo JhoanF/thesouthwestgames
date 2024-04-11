@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply dark:bg-trueGray-900;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  p {
+    line-height: 1.85;
+    font-size: large;
+  }
+
+  .card-image {
+    width: 450px;
+    height: 450px;
+    
+  }
+
+  :root {
+    --toastify-color-success: #ffc800 !important;
+  }
+
+  @keyframes type {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid #000;
+  white-space: nowrap;
+  animation: type 1s steps(24, end);
+}
+
+}
