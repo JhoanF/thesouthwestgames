@@ -12,7 +12,7 @@ function Register() {
             <h2 className='text-2xl mt-6'>Coming Soon</h2>
             <h1 className='lg:text-8xl text-4xl font-bold mb-5'>Oct 26th, 2024</h1>
             <div className='flex justify-center'>
-                <div className="lg:w-[800px]">
+                <div className="lg:w-[800px] w-[360px]">
                     <ContactForm />
                 </div>
             </div>
