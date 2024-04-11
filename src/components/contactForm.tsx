@@ -39,7 +39,7 @@ const ContactForm: React.FC = () => {
 
     return (
         <>
-            <form onSubmit={handleSubmit} className="w-full mx-auto p-4 shadow-md rounded-lg">
+            <form onSubmit={handleSubmit} className="w-full mx-auto p-4 rounded-lg">
                 <div className="mb-4">
                     <label htmlFor="name" className="block font-bold mb-2">
                         Name
@@ -51,7 +51,7 @@ const ContactForm: React.FC = () => {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         required
-                        className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-yellow-500"
+                        className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-yellow-500 text-black"
                     />
                 </div>
                 <div className="mb-4">
@@ -65,7 +65,7 @@ const ContactForm: React.FC = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
-                        className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-yellow-500"
+                        className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-yellow-500 text-black"
                     />
                 </div>
                 <div className="mb-4">
@@ -78,7 +78,7 @@ const ContactForm: React.FC = () => {
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         required
-                        className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-yellow-500"
+                        className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-yellow-500 text-black"
                         rows={4}
                         placeholder='Leave your phone number, age, and competition level.'
                     />
