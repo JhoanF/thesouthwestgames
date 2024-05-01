@@ -2,13 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import Container from "./container";
-import logo from "../../public/img/jcb_logo_8.png"
+import logo from "../../public/img/logo/sw_logo_1.png"
 
 export default function Footer(props: { navigation: { link: string; text: string; }[] }) {
     const navigation = props.navigation;
-    const legal = ["Terms & Conditions",];
+    const legal: any[] = [];
     return (
-        <div className="relative">
+        <div className="relative bg-black">
             <Container>
                 <div className="grid max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-gray-100 dark:border-trueGray-700 lg:grid-cols-5">
                     <div className="lg:col-span-2">
@@ -28,10 +28,28 @@ export default function Footer(props: { navigation: { link: string; text: string
                         </div>
 
                         <div className="max-w-md mt-4 text-gray-500 dark:text-gray-400">
-                            At Just Clean Bee, we take pride in being a family-owned and operated cleaning company. Founded with a passion for cleanliness and a commitment to exceptional service, our journey began right at home. As a family, we understand the value of a well-maintained living space and the positive impact it has on our daily lives.
+
                         </div>
 
                         <div className="mt-5">
+                            <div className="flex flex-row justify-evenly">
+
+                                <Image
+                                    src="/img/sponsors/lycan.png"
+                                    alt="Lycan Fitness"
+                                    height="100"
+                                    width="250"
+                                    loader={({ src }) => src}
+                                />
+                                <Image
+                                    src="/img/sponsors/salvation.png"
+                                    alt="Crossfit Salvation"
+                                    width="100"
+                                    height="100"
+                                    loader={({ src }) => src}
+                                />
+
+                            </div>
                         </div>
                     </div>
 
@@ -56,7 +74,7 @@ export default function Footer(props: { navigation: { link: string; text: string
                     <div className="">
                         <div>Follow us</div>
                         <div className="flex mt-5 space-x-5 text-gray-400 dark:text-gray-500">
-                            <a
+                            {/* <a
                                 // href="https://twitter.com/"
                                 href="/coming-soon"
                                 target="_blank"
@@ -65,46 +83,38 @@ export default function Footer(props: { navigation: { link: string; text: string
                                 <Twitter />
                             </a>
                             <a
-                                href="https://www.facebook.com/profile.php?id=61551204641737"
+                                href="/coming-soon"
                                 target="_blank"
                                 rel="noopener">
                                 <span className="sr-only">Facebook</span>
                                 <Facebook />
-                            </a>
+                            </a> */}
                             <a
-                                href="https://www.instagram.com/justcleanbee/"
+                                href="https://www.instagram.com/thesouthwestgames/"
                                 target="_blank"
                                 rel="noopener">
                                 <span className="sr-only">Instagram</span>
                                 <Instagram />
                             </a>
-                            <a
+                            {/* <a
                                 // href="https://linkedin.com/"
                                 href="/coming-soon"
                                 target="_blank"
                                 rel="noopener">
                                 <span className="sr-only">Linkedin</span>
                                 <Linkedin />
-                            </a>
+                            </a> */}
                         </div>
                     </div>
                 </div>
-
                 <div className="my-10 text-sm text-center text-gray-600 dark:text-gray-400">
-                    Copyright © {new Date().getFullYear()}. Made with ♥ by{" "}
+                    Copyright © {new Date().getFullYear()}. Made by{" "}
                     <a
                         href="/"
                         target="_blank"
                         rel="noopener">
                         Falcon Technology Solutions.
                     </a>{" "}
-                    Illustrations from{" "}
-                    <a
-                        href="https://burst.shopify.com/"
-                        target="_blank"
-                        rel="noopener ">
-                        burst.shopify.com
-                    </a>
                 </div>
             </Container>
         </div>

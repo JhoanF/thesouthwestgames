@@ -6,7 +6,7 @@ const Navbar = (props: { navigation: { link: string; text: string; }[] }) => {
     const { navigation } = props
 
     return (
-        <div className="w-full">
+        <div className="w-full bg-black">
             <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0">
                 {/* Logo  */}
                 <Disclosure>
@@ -17,12 +17,12 @@ const Navbar = (props: { navigation: { link: string; text: string; }[] }) => {
                                     <span className="flex items-center space-x-2 text-2xl font-medium text-yellow-500 dark:text-gray-100">
                                         <span>
                                             <Image
-                                                src="/img/jcb_logo_8.png"
+                                                src="/img/logo/sw_logo_1.png"
                                                 alt="N"
                                                 width="128"
                                                 height="64"
                                                 unoptimized={true}
-                                                className="w-[224px] md:w-[300px]"
+                                                className="w-[124px] md:w-[200px]"
                                             />
                                         </span>
                                         {/* <span>Just Clean Bee</span> */}
@@ -54,12 +54,12 @@ const Navbar = (props: { navigation: { link: string; text: string; }[] }) => {
                                 <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
                                     <>
                                         {navigation.map((item, index) => (
-                                            <Disclosure.Button as={Link} key={index} href={item.link} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-yellow-500 focus:text-yellow-500 focus:bg-yellow-100 dark:focus:bg-gray-800 focus:outline-none" >
+                                            <Disclosure.Button as={Link} key={index} href={item.link} className="w-full px-4 py-2 -ml-4 text-white rounded-md dark:text-gray-300 hover:text-yellow-500 focus:text-yellow-500 focus:bg-yellow-100 dark:focus:bg-gray-800 focus:outline-none" >
                                                 {item.text}
                                             </Disclosure.Button>
                                         ))}
-                                        <Disclosure.Button as={Link} href="/contact" className="w-full px-6 py-2 mt-3 text-center text-white bg-yellow-400 rounded-md lg:ml-5">
-                                            Request Estimate
+                                        <Disclosure.Button as={Link} href="/register" className="w-full px-6 py-2 mt-3 text-center text-white bg-yellow-400 rounded-md lg:ml-5">
+                                            Contact Us
                                         </Disclosure.Button>
 
                                     </>
@@ -74,7 +74,7 @@ const Navbar = (props: { navigation: { link: string; text: string; }[] }) => {
                     <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
                         {navigation.map((item, index) => (
                             <li className="mr-3 nav__item" key={index}>
-                                <Link href={item.link} className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-yellow-500 focus:text-yellow-500 focus:bg-yellow-100 focus:outline-none dark:focus:bg-gray-800">
+                                <Link href={item.link} className="inline-block px-4 py-2 text-lg font-normal text-white no-underline rounded-md dark:text-gray-200 hover:text-yellow-500 focus:text-yellow-500 focus:bg-yellow-100 focus:outline-none dark:focus:bg-gray-800">
                                     {item.text}
                                 </Link>
                             </li>
@@ -83,8 +83,8 @@ const Navbar = (props: { navigation: { link: string; text: string; }[] }) => {
                 </div>
 
                 <div className="hidden mr-3 space-x-4 lg:flex nav__item">
-                    <Link href="/contact" className="px-6 py-2 text-white bg-yellow-400 rounded-md md:ml-5">
-                        Request an Estimate
+                    <Link href="/register" className="px-6 py-2 text-white bg-yellow-400 rounded-md md:ml-5">
+                        Contact Us
                     </Link>
                 </div>
             </nav>

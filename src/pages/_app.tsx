@@ -6,16 +6,15 @@ import Footer from '@/components/footer';
 
 export default function App({ Component, pageProps }: AppProps) {
   const navigation = [
-    { link: "/services", text: "Cleaning Services" },
-    { link: "/cleaning-process", text: "Our Cleaning Process" },
-    { link: "/cleaning-tips", text: "Cleaning Tips" },
-    { link: "/contact", text: "Contact Us" },
+    { link: "/", text: "Register" },
+    { link: "/register", text: "More Info" },
+    { link: "/divisions", text: "Divisions" },
   ];
   return (
     <ThemeProvider attribute="class" defaultTheme='light'>
-      {/* <Navbar navigation={navigation} /> */}
+      <Navbar navigation={navigation} />
       <Component {...pageProps} />
-      {/* <Footer navigation={navigation} /> */}
+      <Footer navigation={navigation} />
     </ThemeProvider>
   )
 }
