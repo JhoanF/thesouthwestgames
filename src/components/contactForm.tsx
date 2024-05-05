@@ -1,8 +1,13 @@
+import { RegistrationType } from '@/pages/constants';
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const ContactForm: React.FC = () => {
+type ContactFormProps = {
+    type: RegistrationType
+}
+
+const ContactForm: React.FC<ContactFormProps> = ({ type }: ContactFormProps) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
@@ -15,6 +20,7 @@ const ContactForm: React.FC = () => {
             email,
             message,
             not_a_bot: true,
+            type,
         }
         const response = await fetch('/api/contact', {
             body: JSON.stringify(data),
@@ -85,7 +91,7 @@ const ContactForm: React.FC = () => {
                 </div>
                 <div className="text-center">
                     <button type="submit" className="bg-yellow-400 text-white px-4 py-2 rounded-md hover:bg-yellow-400 focus:outline-none">
-                        Early Registration
+                        {type} Early Registration
                     </button>
                 </div>
             </form>

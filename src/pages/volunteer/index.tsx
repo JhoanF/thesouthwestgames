@@ -4,7 +4,7 @@ import { RegistrationType } from '../constants'
 
 function Register() {
     return (
-        <EarlyRegistration type={RegistrationType.ATHLETE} />
+        <EarlyRegistration type={RegistrationType.VOLUNTEER} />
     )
 }
 

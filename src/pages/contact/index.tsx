@@ -2,6 +2,7 @@ import ContactForm from '@/components/contactForm'
 import ContactInfo from '@/components/contactInfo'
 import Container from '@/components/container'
 import React from 'react'
+import { RegistrationType } from '../constants'
 
 
 const Contact = () => {
@@ -12,7 +13,7 @@ const Contact = () => {
                     <ContactInfo />
                 </div>
                 <div className="md:w-1/3">
-                    <ContactForm />
+                    <ContactForm type={RegistrationType.ATHLETE} />
                 </div>
             </div>
         </Container>

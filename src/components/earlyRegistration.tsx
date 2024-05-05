@@ -3,16 +3,21 @@ import Image from 'next/image'
 import swGamesLogo from "../../public/img/logo/sw_logo_1.png";
 import ContactForm from '@/components/contactForm';
 import { Container } from 'postcss';
+import { RegistrationType } from '@/pages/constants';
 
-function EarlyRegistration() {
+type EarlyRegistrationProps = {
+    type: RegistrationType
+}
+
+function EarlyRegistration({ type }: EarlyRegistrationProps) {
     return (
         <div className='flex flex-col items-center justify-center h-screen p-5 bg-black text-white'>
             <Image src={swGamesLogo} alt="Southwest Games Logo" width="500" height="500" />
-            <h2 className='text-2xl mt-6'>Coming Soon</h2>
+            <h2 className='text-3xl mt-6 mb-2'>{type}</h2>
             <h1 className='lg:text-8xl text-4xl font-bold mb-5'>Oct 26th, 2024</h1>
             <div className='flex justify-center'>
                 <div className="lg:w-[800px] w-[360px]">
-                    <ContactForm />
+                    <ContactForm type={type} />
                 </div>
             </div>
         </div>

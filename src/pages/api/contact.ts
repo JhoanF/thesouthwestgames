@@ -1,6 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 import sgMail from '@sendgrid/mail';
+import { RegistrationType } from '../constants';
 
 
 type ResponseData = {
@@ -13,6 +14,7 @@ type ContactRequest = {
   email: string
   message: string
   not_a_bot: boolean
+  type: RegistrationType
 }
 
 export default async function handler(
@@ -23,7 +25,7 @@ export default async function handler(
     res.status(405).json({ message: 'Method not allowed' })
   }
 
-  const { name, email, message, not_a_bot } = req.body as ContactRequest
+  const { name, email, message, not_a_bot, type } = req.body as ContactRequest
 
   if (!not_a_bot) {
     res.status(403).json({ message: 'You are a bot' })
@@ -37,6 +39,7 @@ export default async function handler(
     email,
     message,
     name,
+    type
   }
 
 
@@ -49,7 +52,7 @@ export default async function handler(
       to: 'coachmani2014@gmail.com',
       from: 'jhoan.o.falcongonzalez@gmail.com',
       cc: ['jhoan.o.falcongonzalez@gmail.com'],
-      subject: 'The South West Games - Contact Form Submission',
+      subject: 'The South West Games - Contact Form Submission - ' + type,
       text: `
         Name: ${name}
         Email: ${email}
