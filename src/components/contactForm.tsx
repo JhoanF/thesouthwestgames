@@ -86,7 +86,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ type }: ContactFormProps) => 
                         required
                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-yellow-500 text-black"
                         rows={4}
-                        placeholder='Leave your phone number, age, and competition level.'
+                        placeholder={type == RegistrationType.ATHLETE ? `Leave your phone number, age, and competition level.` : type == RegistrationType.VENDOR ? `Leave your business name and products.` : type == RegistrationType.VOLUNTEER ? `Leave your availability and t-shirt size!` : `Leave your message here.`}
                     />
                 </div>
                 <div className="text-center">
