@@ -1,6 +1,6 @@
-import EarlyRegistration from '@/components/earlyRegistration'
+import EarlyRegistration, { RegistrationType } from '@/components/earlyRegistration'
 import React, { useEffect, useState } from 'react'
-import { RegistrationType } from '../constants'
+
 
 function Register() {
     return (

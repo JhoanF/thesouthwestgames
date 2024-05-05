@@ -1,8 +1,8 @@
 import ContactForm from '@/components/contactForm'
 import ContactInfo from '@/components/contactInfo'
 import Container from '@/components/container'
+import { RegistrationType } from '@/components/earlyRegistration'
 import React from 'react'
-import { RegistrationType } from '../constants'
 
 
 const Contact = () => {

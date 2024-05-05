@@ -3,10 +3,16 @@ import Image from 'next/image'
 import swGamesLogo from "../../public/img/logo/sw_logo_1.png";
 import ContactForm from '@/components/contactForm';
 import { Container } from 'postcss';
-import { RegistrationType } from '@/pages/constants';
 
 type EarlyRegistrationProps = {
     type: RegistrationType
+}
+
+// registration type enum
+export enum RegistrationType {
+    VOLUNTEER = 'Volunteer',
+    ATHLETE = 'Athlete',
+    VENDOR = 'Vendor',
 }
 
 function EarlyRegistration({ type }: EarlyRegistrationProps) {
