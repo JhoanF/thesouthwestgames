@@ -58,7 +58,7 @@ const Navbar = (props: { navigation: { link: string; text: string; }[] }) => {
                                                 {item.text}
                                             </Disclosure.Button>
                                         ))}
-                                        <Disclosure.Button as={Link} href="/register" className="w-full px-6 py-2 mt-3 text-center text-white bg-yellow-400 rounded-md lg:ml-5">
+                                        <Disclosure.Button as={Link} href="/" className="w-full px-6 py-2 mt-3 text-center text-white bg-yellow-400 rounded-md lg:ml-5">
                                             Contact Us
                                         </Disclosure.Button>
 
@@ -83,7 +83,7 @@ const Navbar = (props: { navigation: { link: string; text: string; }[] }) => {
                 </div>
 
                 <div className="hidden mr-3 space-x-4 lg:flex nav__item">
-                    <Link href="/register" className="px-6 py-2 text-white bg-yellow-400 rounded-md md:ml-5">
+                    <Link href="/" className="px-6 py-2 text-white bg-yellow-400 rounded-md md:ml-5">
                         Contact Us
                     </Link>
                 </div>

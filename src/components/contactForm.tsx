@@ -91,7 +91,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ type }: ContactFormProps) => 
                 </div>
                 <div className="text-center">
                     <button type="submit" className="bg-yellow-400 text-white px-4 py-2 rounded-md hover:bg-yellow-400 focus:outline-none">
-                        {type} Early Registration
+                        Send Message
                     </button>
                 </div>
             </form>

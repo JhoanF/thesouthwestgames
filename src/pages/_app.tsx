@@ -6,8 +6,8 @@ import Footer from '@/components/footer';
 
 export default function App({ Component, pageProps }: AppProps) {
   const navigation = [
-    { link: "/", text: "Register" },
-    { link: "/register", text: "More Info" },
+    { link: "/register", text: "Register" },
+    { link: "/", text: "More Info" },
     { link: "/divisions", text: "Divisions" },
     { link: "/volunteer", text: "Volunteer" },
   ];
