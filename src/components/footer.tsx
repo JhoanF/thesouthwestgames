@@ -31,65 +31,87 @@ export default function Footer(props: { navigation: { link: string; text: string
 
                         </div>
 
-                        <div className="mt-5">
-                            <div className="flex md:flex-row flex-col md:justify-evenly">
-                                <Image
-                                    src="/img/sponsors/lycan.png"
-                                    alt="Lycan Fitness"
-                                    width="250"
-                                    height={100}
-                                    loader={({ src }) => src}
-                                    style={{ maxHeight: '100px' }}
-
-                                />
-                                <Image
-                                    src="/img/sponsors/salvation.png"
-                                    alt="Crossfit Salvation"
-                                    width="100"
-                                    height="100"
-                                    loader={({ src }) => src}
-                                    style={{ maxHeight: '100px' }}
-                                />
-                                <Image
-                                    src="/img/sponsors/lmnt.png"
-                                    alt="LMNT"
-                                    width="100"
-                                    height="100"
-                                    loader={({ src }) => src}
-                                />
-                                <Image
-                                    src="/img/sponsors/summerlindental.png"
-                                    alt="Summerlin Dental"
-                                    width="300"
-                                    height="100"
-                                    loader={({ src }) => src}
-                                    style={{ maxHeight: '100px' }}
-                                />
-                                <Image
-                                    src="/img/sponsors/sharks.png"
-                                    alt="SWFL Sharks"
-                                    width="250"
-                                    height="100"
-                                    loader={({ src }) => src}
-                                    style={{ maxHeight: '100px' }}
-                                />
-                                <Image
-                                    src="/img/sponsors/elev.png"
-                                    alt="ElevFitness"
-                                    width="250"
-                                    height="100"
-                                    loader={({ src }) => src}
-                                    style={{ maxHeight: '100px' }}
-                                />
-                                <Image
-                                    src="/img/sponsors/rokfit.png"
-                                    alt="Rokfit"
-                                    width="100"
-                                    height="100"
-                                    loader={({ src }) => src}
-                                    style={{ maxHeight: '100px' }}
-                                />
-                            </div>
+                        <div className="mt-5 grid grid-cols-2 md:grid-cols-4 gap-4 items-center justify-items-center">
+                            <Image
+                                src="/img/sponsors/lycan.png"
+                                alt="Lycan Fitness"
+                                width="125"
+                                height="50"
+                                loader={({ src }) => src}
+                                className="p-2"
+                            />
+                            <Image
+                                src="/img/sponsors/cerus.png"
+                                alt="Cerus Performance"
+                                width="125"
+                                height="50"
+                                loader={({ src }) => src}
+                                className="p-2"
+                            />
+                            <Image
+                                src="/img/sponsors/salvation.png"
+                                alt="Crossfit Salvation"
+                                width="50"
+                                height="50"
+                                loader={({ src }) => src}
+                                className="p-2"
+                            />
+                            <Image
+                                src="/img/sponsors/lmnt.png"
+                                alt="LMNT"
+                                width="50"
+                                height="50"
+                                loader={({ src }) => src}
+                                className="p-2"
+                            />
+                            <Image
+                                src="/img/sponsors/summerlindental.png"
+                                alt="Summerlin Dental"
+                                width="150"
+                                height="50"
+                                loader={({ src }) => src}
+                                className="p-2"
+                            />
+                            <Image
+                                src="/img/sponsors/sharks_bw.png"
+                                alt="SWFL Sharks"
+                                width="125"
+                                height="50"
+                                loader={({ src }) => src}
+                                className="p-2"
+                            />
+                            <Image
+                                src="/img/sponsors/elev.png"
+                                alt="ElevFitness"
+                                width="125"
+                                height="50"
+                                loader={({ src }) => src}
+                                className="p-2"
+                            />
+                            <Image
+                                src="/img/sponsors/rokfit.png"
+                                alt="Rokfit"
+                                width="100"
+                                height="100"
+                                loader={({ src }) => src}
+                                className="p-2"
+                            />
+                            <Image
+                                src="/img/sponsors/tyr_w.png"
+                                alt="TYR"
+                                width="100"
+                                height="100"
+                                loader={({ src }) => src}
+                                className="p-2"
+                            />
+                            <Image
+                                src="/img/sponsors/10perf_bw.png"
+                                alt="10 Performance"
+                                width="125"
+                                height="50"
+                                loader={({ src }) => src}
+                                className="p-2"
+                            />
                         </div>
                     </div>
 
