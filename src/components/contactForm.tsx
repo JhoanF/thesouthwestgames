@@ -11,6 +11,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ type }: ContactFormProps) => 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+    const [tshirt, setTshirt] = useState('');
+    const [isJudge, setIsJudge] = useState(false);
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
@@ -21,6 +23,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ type }: ContactFormProps) => 
             message,
             not_a_bot: true,
             type,
+            isJudge,
+            tshirt
         }
         const response = await fetch('/api/contact', {
             body: JSON.stringify(data),
@@ -37,6 +41,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ type }: ContactFormProps) => 
             setName('')
             setEmail('')
             setMessage('')
+            setTshirt('')
+            setIsJudge(false)
         } else {
             console.error(result.error)
             toast.error('Error sending message. Please try again later.')
@@ -74,6 +80,48 @@ const ContactForm: React.FC<ContactFormProps> = ({ type }: ContactFormProps) => 
                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-yellow-500 text-black"
                     />
                 </div>
+                {type == RegistrationType.VOLUNTEER && (
+                    <>
+                        <div className="mb-4 flex flex-row justify-between">
+                            <div className="flex-1">
+                                <label htmlFor="tshirt" className="block font-bold mb-2">
+                                    T-Shirt Size
+                                </label>
+                                <select
+                                    id="tshirt"
+                                    name="tshirt"
+                                    value={tshirt}
+                                    onChange={(e) => setTshirt(e.target.value)}
+                                    required
+                                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-yellow-500 text-black"
+                                >
+                                    <option value="">Select a size</option>
+                                    <option value="S">Small</option>
+                                    <option value="M">Medium</option>
+                                    <option value="L">Large</option>
+                                    <option value="XL">Extra Large</option>
+                                </select>
+                            </div>
+                            <div>
+                                <div className="ml-4">
+                                    <label htmlFor="isJudge" className="block font-bold mb-2">
+                                        Are you a judge?
+                                    </label>
+                                    <input
+                                        type="checkbox"
+                                        id="isJudge"
+                                        name="isJudge"
+                                        value={isJudge.toString()}
+                                        onChange={(e) => setIsJudge(e.target.checked)}
+                                        className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-yellow-500 text-black"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                    </>
+                )
+                }
                 <div className="mb-4">
                     <label htmlFor="message" className="block font-bold mb-2">
                         Message

@@ -15,6 +15,8 @@ type ContactRequest = {
   message: string
   not_a_bot: boolean
   type: RegistrationType
+  isJudge: boolean
+  tshirt: string
 }
 
 export default async function handler(
@@ -25,7 +27,7 @@ export default async function handler(
     res.status(405).json({ message: 'Method not allowed' })
   }
 
-  const { name, email, message, not_a_bot, type } = req.body as ContactRequest
+  const { name, email, message, not_a_bot, type, isJudge, tshirt } = req.body as ContactRequest
 
   if (!not_a_bot) {
     res.status(403).json({ message: 'You are a bot' })
@@ -34,14 +36,6 @@ export default async function handler(
   if (!name || !email || !message) {
     res.status(422).json({ message: 'Invalid input' })
   }
-
-  const newMessage = {
-    email,
-    message,
-    name,
-    type
-  }
-
 
   try {
     const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY as string;
@@ -57,6 +51,9 @@ export default async function handler(
         Name: ${name}
         Email: ${email}
         Message: ${message}
+        ${type == RegistrationType.VOLUNTEER &&
+        `IsJudge: ${isJudge}` + '\n' + `Tshirt: ${tshirt}`
+        }
       `,
     };
 
