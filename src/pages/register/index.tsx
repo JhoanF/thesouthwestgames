@@ -17,11 +17,19 @@ function Register() {
                     <div className='text-4xl cursor-pointer border border-solid p-10 my-5'>
                         <Link href="https://podium.boxtribe.io/reg/index_open.php?event_id=3969">Sponsors</Link>
                     </div>
+                </div>
+                <div className='flex md:flex-row flex-col items-center justify-evenly md:space-x-24 md:space-y-0'>
                     <div className='text-4xl cursor-pointer border border-solid p-10 my-5'>
                         <Link href="https://podium.boxtribe.io/reg/index_open.php?event_id=3969">Spectators</Link>
                     </div>
                     <div className='text-2xl cursor-pointer border border-solid p-10 my-5'>
                         <Link href="https://podium.boxtribe.io/reg/index_open.php?event_id=3969">Photo Packages</Link>
+                    </div>
+                    <div className='text-4xl cursor-pointer border border-solid p-10 my-5'>
+                        <Link href="/volunteer">Volunteers</Link>
+                    </div>
+                    <div className='text-4xl cursor-pointer border border-solid p-10 my-5'>
+                        <Link href="/volunteer">Judges</Link>
                     </div>
                 </div>
             </div>

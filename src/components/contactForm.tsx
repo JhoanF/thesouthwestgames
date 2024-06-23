@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { RegistrationType } from './earlyRegistration';
+import { useRouter } from 'next/router';
 
 type ContactFormProps = {
     type: RegistrationType
@@ -12,7 +13,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ type }: ContactFormProps) => 
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [tshirt, setTshirt] = useState('');
-    const [isJudge, setIsJudge] = useState(false);
+    const [isJudge, setIsJudge] = useState('');
+    const router = useRouter()
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
@@ -42,7 +44,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ type }: ContactFormProps) => 
             setEmail('')
             setMessage('')
             setTshirt('')
-            setIsJudge(false)
+            setIsJudge('')
         } else {
             console.error(result.error)
             toast.error('Error sending message. Please try again later.')
@@ -107,14 +109,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ type }: ContactFormProps) => 
                                     <label htmlFor="isJudge" className="block font-bold mb-2">
                                         Are you a judge?
                                     </label>
-                                    <input
-                                        type="checkbox"
+                                    <select
                                         id="isJudge"
                                         name="isJudge"
                                         value={isJudge.toString()}
-                                        onChange={(e) => setIsJudge(e.target.checked)}
+                                        onChange={(e) => setIsJudge(e.target.value)}
+                                        required
                                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-yellow-500 text-black"
-                                    />
+                                    >
+                                        <option value="No">No</option>
+                                        <option value="Yes">Yes</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
