@@ -23,7 +23,7 @@ function Register() {
                         <Link href="https://podium.boxtribe.io/reg/index_open.php?event_id=3969">Spectators</Link>
                     </div>
                     <div className='text-2xl cursor-pointer border border-solid p-10 my-5'>
-                        <Link href="https://podium.boxtribe.io/reg/index_open.php?event_id=3969">Photo Packages</Link>
+                        <Link href="https://podium.boxtribe.io/reg/index_open.php?event_id=3981">Photo Packages</Link>
                     </div>
                     <div className='text-4xl cursor-pointer border border-solid p-10 my-5'>
                         <Link href="/volunteer">Volunteers</Link>
